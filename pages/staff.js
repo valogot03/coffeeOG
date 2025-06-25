@@ -269,7 +269,7 @@ export default function Staff() {
               <td>{new Date(group.created_at).toLocaleString()}</td>
               <td>
                 {group.items.map((item, idx) => (
-                  <div key={idx}>{item.menu}</div>
+                  <div key={idx}>{item.menu}{item.quantity > 1 ? ` x${item.quantity}` : ''}</div>
                 ))}
               </td>
               <td>{statusOptions.find(opt => opt.value === group.status)?.label || group.status}</td>
