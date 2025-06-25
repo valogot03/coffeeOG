@@ -7,10 +7,10 @@ const supabase = createClient(
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { menu, size, options, slip_url, ref_code, order_id } = req.body;
+    const { menu, size, options, slip_url, ref_code, order_id, quantity } = req.body;
     const { error } = await supabase
       .from('orders')
-      .insert([{ menu, size, options, slip_url, ref_code, order_id }]);
+      .insert([{ menu, size, options, slip_url, ref_code, order_id, quantity }]);
     if (error) return res.status(500).json({ error: error.message });
     return res.status(200).json({ message: 'Order placed' });
   }
