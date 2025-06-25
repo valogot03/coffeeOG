@@ -1,0 +1,83 @@
+body {
+  font-family: 'Prompt', 'Kanit', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  margin: 0;
+  min-height: 100vh;
+  color: #22223b;
+}
+
+h1, h2, h3 {
+  color: #3a5a40;
+}
+
+button {
+  background: #3a86ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 4px 0;
+}
+button:hover {
+  background: #264653;
+}
+
+table {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  margin: 16px 0;
+}
+
+th {
+  background: #b7e4c7;
+  color: #22223b;
+}
+
+td, th {
+  padding: 10px 16px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1.05rem;
+    padding: 0;
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .menu-list {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+  .menu-card {
+    width: 95vw !important;
+    min-width: 0 !important;
+    max-width: 400px !important;
+    padding: 12px !important;
+  }
+  form {
+    min-width: 0 !important;
+    width: 95vw !important;
+    max-width: 400px !important;
+    padding: 16px !important;
+  }
+  table {
+    font-size: 0.95rem;
+    width: 100vw !important;
+    overflow-x: auto;
+    display: block;
+  }
+  th, td {
+    padding: 6px 4px !important;
+  }
+  button {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+} 
