@@ -65,7 +65,19 @@ export default function Home() {
       slip_url = data.url;
     }
     const order_id = uuidv4();
-    for (const item of cart) {
+    // รวมเมนูซ้ำใน cart ให้เป็น 1 แถวที่ quantity รวมกัน
+    const mergedCart = [];
+    cart.forEach(item => {
+      const found = mergedCart.find(
+        i => i.menu === item.menu && i.price === item.price && i.category === item.category
+      );
+      if (found) {
+        found.quantity += item.quantity || 1;
+      } else {
+        mergedCart.push({ ...item });
+      }
+    });
+    for (const item of mergedCart) {
       await fetch('/api/orders', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
